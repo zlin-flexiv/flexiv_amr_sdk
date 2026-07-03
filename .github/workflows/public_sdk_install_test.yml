@@ -2,6 +2,11 @@ name: Public SDK Install Test
 
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag to test, for example v0.1.6"
+        required: true
+        type: string
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
