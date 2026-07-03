@@ -1,0 +1,111 @@
+name: Feature Request
+description: Suggest an improvement, new API, or documentation update for Flexiv AMR SDK
+title: "[Feature]: "
+labels: ["enhancement"]
+
+body:
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Which area does this request mainly affect?
+      multiple: true
+      options:
+        - C++ public API
+        - Python binding
+        - CMake, install, or packaging
+        - SEER or Flexiv AMR backend
+        - Navigation or motion control
+        - Status, sensor, map, task, or audio API
+        - Examples or tests
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request type
+      description: Select the option that best describes this request.
+      multiple: true
+      options:
+        - New feature
+        - Existing feature improvement
+        - Usability improvement
+        - Performance improvement
+        - Compatibility improvement
+        - Documentation improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Use case or problem
+      description: Describe the AMR workflow, SDK usage, limitation, or workaround that motivates this request.
+      placeholder: "Example: We need to run the same navigation command from both C++ and Python, but only the C++ API exposes the required option."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior, API shape, command, example, or documentation change you want.
+      placeholder: |
+        ```cpp
+        // Optional C++ API sketch
+        ```
+
+        ```python
+        # Optional Python API sketch
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe other solutions, workarounds, or API shapes you considered.
+      placeholder: "Example: This can also be exposed as a lower-level configuration field, but that would be harder to use safely."
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and constraints
+      description: Describe platform, language, backend, controller version, or backward compatibility requirements.
+      placeholder: |
+        - C++ / Python / both:
+        - Platform:
+        - AMR backend: SEER / Flexiv / all
+        - Requires controller software changes:
+        - Backward compatibility concerns:
+
+  - type: dropdown
+    id: safety-impact
+    attributes:
+      label: Safety impact
+      description: Would this change affect robot motion, navigation, emergency stop, or other safety-critical behavior?
+      options:
+        - "No"
+        - "Yes"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or references
+      description: Add screenshots, protocol references, related issues, logs, links, or examples.
+      placeholder: "Links, screenshots, logs, or reference material"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other information that would help evaluate this request.
+      placeholder: "Additional context"

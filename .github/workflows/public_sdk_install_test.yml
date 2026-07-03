@@ -1,10 +1,11 @@
 name: Public SDK Install Test
 
 on:
-  push:
-    tags:
-      - "v*"
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   BUILD_TYPE: Release
@@ -32,7 +33,7 @@ jobs:
 
           - name: windows-2022
             os: windows-2022
-            install_prefix: $USERPROFILE/flexiv_amr_sdk_install
+            install_prefix: $HOME/flexiv_amr_sdk_install
 
     steps:
       - name: Checkout
@@ -47,7 +48,8 @@ jobs:
         shell: bash
         run: |
           cmake --version
-          bash thirdparty/build_and_install_dependencies.sh "${{ matrix.install_prefix }}" 4
+          AMR_BUILD_PYBIND11=OFF \
+            bash thirdparty/build_and_install_dependencies.sh "${{ matrix.install_prefix }}" 4
 
       - name: Configure public SDK
         shell: bash

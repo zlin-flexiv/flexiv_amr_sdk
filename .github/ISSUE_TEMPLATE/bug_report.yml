@@ -1,0 +1,144 @@
+name: Bug Report
+description: Report a reproducible Flexiv AMR SDK issue
+title: "[Bug]: "
+labels: ["bug"]
+
+body:
+  - type: input
+    id: version
+    attributes:
+      label: SDK version
+      description: Provide the release version, branch name, tag, or commit hash you are using.
+      placeholder: "Example: v0.1.2 / main@abcdef1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: API or language
+      description: Which SDK interface is affected?
+      multiple: true
+      options:
+        - C++
+        - Python
+        - CMake or packaging
+        - Examples
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Select the platform where the issue occurs.
+      multiple: true
+      options:
+        - Ubuntu 24.04 x86_64
+        - Ubuntu 22.04 x86_64
+        - Linux aarch64
+        - macOS arm64
+        - Windows amd64
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Build and runtime environment
+      description: Include compiler, CMake version, Python version, build type, and relevant CMake options.
+      placeholder: |
+        - Compiler: GCC 11.4 / MSVC 2022 / Clang ...
+        - CMake: 3.28.3
+        - Python: 3.10 / 3.12
+        - Build options: AMR_BUILD_PYTHON=ON, AMR_BUILD_SHARED=OFF
+        - Dependency install path:
+    validations:
+      required: true
+
+  - type: textarea
+    id: amr-context
+    attributes:
+      label: AMR and network context
+      description: Provide AMR backend, controller version, connection mode, and network setup. Do not include credentials or secrets.
+      placeholder: |
+        - AMR vendor/backend: SEER / Flexiv / other
+        - Controller software version:
+        - Real AMR or simulator:
+        - API involved: status / navigation / motion / audio / sensor / map / task
+        - Network setup:
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue description
+      description: Describe what happened and how it affects normal SDK usage.
+      placeholder: "Example: The Python binding imports successfully, but calling getStatus() returns an empty response on Ubuntu 22.04."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide commands or operations that reproduce the issue. If it is intermittent, describe the frequency.
+      placeholder: |
+        1. Configure with ...
+        2. Build with ...
+        3. Run ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe the result you expected.
+      placeholder: "Example: The API should return the current AMR status without throwing an exception."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, errors, or stack traces
+      description: Paste relevant logs or upload log files. Remove tokens, credentials, IP-sensitive details, and private data.
+      render: shell
+      placeholder: "Paste terminal output, compiler errors, runtime logs, or stack traces here."
+
+  - type: textarea
+    id: minimal-repro
+    attributes:
+      label: Minimal code or command
+      description: Provide the smallest C++ or Python snippet, command, or example invocation that reproduces the issue.
+      placeholder: |
+        ```cpp
+        // C++ snippet
+        ```
+
+        ```python
+        # Python snippet
+        ```
+
+  - type: dropdown
+    id: safety-impact
+    attributes:
+      label: Safety impact
+      description: Does this issue affect robot motion, navigation, emergency stop, or other safety-critical behavior?
+      options:
+        - "No"
+        - "Yes"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add screenshots, network traces, related issues, workaround details, or any other useful information.
+      placeholder: "Additional context"

@@ -1,0 +1,88 @@
+name: Question
+description: Ask a question about using or developing Flexiv AMR SDK
+title: "[Question]: "
+labels: ["help wanted"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check the README, examples, public headers, existing issues, and release notes before opening a new question.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question category
+      description: Select all areas related to your question.
+      multiple: true
+      options:
+        - Build, install, or CMake
+        - C++ API usage
+        - Python binding usage
+        - AMR connection or network setup
+        - Status or sensor data
+        - Navigation or motion control
+        - Audio, task, map, or configuration API
+        - Examples, tests, or documentation
+        - Release packages or static libraries
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: SDK version
+      description: Provide the release version, branch name, tag, or commit hash you are using.
+      placeholder: "Example: v0.1.2 / main@abcdef1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, architecture, language/API, compiler or Python version, and relevant CMake options.
+      placeholder: |
+        - OS and architecture:
+        - Language/API: C++ / Python
+        - Compiler or Python version:
+        - CMake options:
+        - AMR backend, if relevant: SEER / Flexiv
+        - Controller software version, if known:
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Include commands, code snippets, example names, logs, or documentation sections you already checked.
+      placeholder: |
+        ```bash
+        # Commands
+        ```
+
+        ```cpp
+        // C++ snippet, if relevant
+        ```
+
+        ```python
+        # Python snippet, if relevant
+        ```
+
+  - type: input
+    id: region
+    attributes:
+      label: Country or region
+      description: This helps us understand the support context.
+      placeholder: "Example: China / Germany / United States"
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Describe your question with enough context for others to answer.
+      placeholder: "Text, screenshots, links, code blocks ..."
+    validations:
+      required: true
