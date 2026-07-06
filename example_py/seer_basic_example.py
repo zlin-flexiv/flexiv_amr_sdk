@@ -168,11 +168,8 @@ def main() -> int:
         amr.connect()
 
         logger.info("Connected: %s", amr.is_connected())
-
         print_amr_info(amr)
-
         loop_count = 0
-
         while not stop_requested:
             loop_count += 1
 

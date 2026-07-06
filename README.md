@@ -1,7 +1,7 @@
 # Flexiv AMR SDK
 
-![Cpp Badge](https://github.com/zlin-flexiv/flexiv_amr_sdk/actions/workflows/public_sdk_install_test.yml/badge.svg)
-![Python Badge](https://github.com/zlin-flexiv/flexiv_amr_sdk/actions/workflows/public_sdk_install_test.yml/badge.svg)
+![Cpp Badge](https://github.com/flexivrobotics/flexiv_amr_sdk/actions/workflows/public_sdk_install_test.yml/badge.svg)
+![Python Badge](https://github.com/flexivrobotics/flexiv_amr_sdk/actions/workflows/public_sdk_install_test.yml/badge.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 Flexiv AMR SDK is a C++ and Python development toolkit that enables users to create AMR applications using APIs for AMR status query, navigation, motion, audio, sensor data, and configuration. The current public release provides SEER AMR integration. Flexiv AMR support is reserved for future releases.
@@ -12,7 +12,7 @@ This repository is the public binary distribution of Flexiv AMR SDK. It contains
 
 - [Flexiv AMR SDK API Documentation](https://flexiv-amr-sdk-doc.netlify.app/) is the main API reference. 
 
-- [Flexiv AMR SDK Releases](https://github.com/zlin-flexiv/flexiv_amr_sdk/releases) is the main place to download prebuilt C++ static libraries and Python wheels. The instructions below serve as a quick reference.
+- [Flexiv AMR SDK Releases](https://github.com/flexivrobotics/flexiv_amr_sdk/releases) is the main place to download prebuilt C++ static libraries and Python wheels. The instructions below serve as a quick reference.
 
 ## Environment Compatibility
 
@@ -30,7 +30,7 @@ Before trying to run any AMR SDK program, please make sure the host computer can
 
 ### Install the Python package
 
-On all supported platforms, download the Python wheel that matches your OS, architecture, and Python version from [GitHub Releases](https://github.com/zlin-flexiv/flexiv_amr_sdk/releases), then install it using the `pip` module:
+On all supported platforms, download the Python wheel that matches your OS, architecture, and Python version from [GitHub Releases](https://github.com/flexivrobotics/flexiv_amr_sdk/releases), then install it using the `pip` module:
 
     python3.x -m pip install ./flexiv_amr-*.whl
 

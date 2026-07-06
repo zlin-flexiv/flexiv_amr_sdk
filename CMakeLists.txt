@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(flexiv_amr_sdk
-    VERSION 0.2.5
+    VERSION 1.0.0
     DESCRIPTION "Flexiv AMR SDK"
     LANGUAGES CXX
 )
@@ -57,7 +57,7 @@ file(READ "${CMAKE_CURRENT_SOURCE_DIR}/lib/${FLEXIV_AMR_LIB}.sha256" EXPECTED_HA
 string(STRIP "${EXPECTED_HASH}" EXPECTED_HASH)
 
 set(FLEXIV_AMR_LIB_URL
-    "https://github.com/zlin-flexiv/flexiv_amr_sdk/releases/download/${FLEXIV_AMR_SDK_RELEASE_TAG}/${FLEXIV_AMR_LIB}"
+    "https://github.com/flexivrobotics/flexiv_amr_sdk/releases/download/${FLEXIV_AMR_SDK_RELEASE_TAG}/${FLEXIV_AMR_LIB}"
 )
 
 message(STATUS "Downloading ${FLEXIV_AMR_LIB_URL} ...")

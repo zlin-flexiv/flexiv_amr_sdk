@@ -6,7 +6,6 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     )
 endif()
 
-# When examples are built inside the SDK source tree, flexiv::amr already exists.
 # When examples are built as a standalone project, find the installed SDK package.
 if(NOT TARGET flexiv::flexiv_amr)
     find_package(flexiv_amr_sdk REQUIRED)

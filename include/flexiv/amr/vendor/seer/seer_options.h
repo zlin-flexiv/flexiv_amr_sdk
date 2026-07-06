@@ -24,7 +24,6 @@ struct SeerTimeoutOptions {
 
     /** Timeout in milliseconds for receiving a response frame. */
     int recv_timeout_ms = 3000;
-
 };
 
 /**
@@ -45,12 +44,11 @@ struct SeerPortOptions {
     /** Port used by configuration commands. */
     uint16_t config_port = 19207;
 
-    /** Port used by operation commands such as digital output control. */
+    /** Port used by operation commands. */
     uint16_t operation_port = 19210;
 
     /** Port reserved for SEER push data. */
     uint16_t push_port = 19301;
-
 };
 
 /**
@@ -74,7 +72,6 @@ struct SeerAmrOptions {
 
     /** Reconnect automatically before a request when a channel is disconnected. */
     bool auto_reconnect = true;
-
 };
 
 }  // namespace flexiv::amr::seer
